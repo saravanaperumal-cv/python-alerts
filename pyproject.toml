@@ -1,0 +1,13 @@
+[project]
+name = "python-alerts"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "pulse-py",
+    "loom-nats",
+    "nats-py>=2.13.1",
+]
+
+[tool.uv.sources]
+pulse-py = { path = "/home/saravana/dev_testing/pulse/pulse-py", editable = true }
+loom-nats = { git = "https://github.com/machanirobotics/loom.git", rev = "main" , subdirectory = "python/nats"}

@@ -1,0 +1,28 @@
+[service]
+name = "test-python"
+version = "1.0.0"
+description = "Person detection service with metrics export to Prometheus via OTEL (Python)"
+
+[service.attributes]
+"service.type" = "vision"
+"detection.target" = "person"
+"environment" = "development"
+
+
+[telemetry]
+enabled = true
+
+[telemetry.otlp]
+enabled = true
+host = "localhost"
+port = 4317
+
+[metrics]
+enabled = true
+export_interval = "30s"
+
+[tracing]
+enabled = true
+
+[profiling]
+enabled = false
